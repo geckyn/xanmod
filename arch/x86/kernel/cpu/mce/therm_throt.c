@@ -626,6 +626,7 @@ DEFINE_IDTENTRY_SYSVEC(sysvec_thermal)
 /* Thermal monitoring depends on APIC, ACPI and clock modulation */
 static int intel_thermal_supported(struct cpuinfo_x86 *c)
 {
+	return 0;
 	if (!boot_cpu_has(X86_FEATURE_APIC))
 		return 0;
 	if (!cpu_has(c, X86_FEATURE_ACPI) || !cpu_has(c, X86_FEATURE_ACC))
